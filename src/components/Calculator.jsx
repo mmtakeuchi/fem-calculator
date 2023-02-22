@@ -12,6 +12,11 @@ const Calculator = () => {
     if (num === 'reset') {
       setValue('0');
       return;
+    } else if (num === 'delete') {
+      let nums = value.toString();
+      nums = nums.substring(0, nums.length - 1);
+      setValue(nums);
+      return;
     }
 
     if (value === '0') {
@@ -74,7 +79,12 @@ const Calculator = () => {
           <Button handleClick={() => handleNumberClick('7')}>7</Button>
           <Button handleClick={() => handleNumberClick('8')}>8</Button>
           <Button handleClick={() => handleNumberClick('9')}>9</Button>
-          <Button className="blueBtn">DEL</Button>
+          <Button
+            className="blueBtn"
+            handleClick={() => handleNumberClick('delete')}
+          >
+            DEL
+          </Button>
         </div>
         <div className="keyboard-row">
           <Button handleClick={() => handleNumberClick('4')}>4</Button>
