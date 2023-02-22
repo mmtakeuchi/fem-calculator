@@ -8,7 +8,10 @@ const Calculator = () => {
   return (
     <div className="calc-container">
       <header>
-        <div>Calc</div> <ToggleSwitch />
+        <div>Calc</div>
+        <div className="theme-toggle">
+          <span class="theme-span">THEME</span> <ToggleSwitch />
+        </div>
       </header>
       <div className="output-screen">{value}</div>
       <Button />
