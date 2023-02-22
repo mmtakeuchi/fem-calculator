@@ -73,7 +73,9 @@ const Calculator = () => {
           <span className="theme-span">THEME</span> <ToggleSwitch />
         </div>
       </header>
-      <div className="output-screen">{value}</div>
+      <div className="output-screen">
+        {Number(value).toLocaleString('en-US')}
+      </div>
       <div className="keyboard">
         <div className="keyboard-row">
           <Button handleClick={() => handleNumberClick('7')}>7</Button>
