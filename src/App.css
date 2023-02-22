@@ -32,12 +32,13 @@ header {
 
 .theme-toggle {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .theme-span {
   font-size: 10px;
   margin-right: 1rem;
+  line-height: 1.25rem;
 }
 
 .toggle-container {
@@ -90,12 +91,90 @@ header {
   transition: left 0.2s ease-in-out;
 }
 
+.toggle-switch-ball:active {
+  background-color: hsl(6, 63%, 60%);
+}
+
 .output-screen {
   padding: 0.75rem;
   background-color: hsl(224, 36%, 15%);
   text-align: right;
   color: hsl(0, 0%, 100%);
   border-radius: 5px;
+}
+
+.keyboard {
+  max-width: 100%;
+  height: 100%;
+  margin-top: 1rem;
+  padding: 1.5rem;
+  border-radius: 5px;
+  background-color: hsl(223, 31%, 20%);
+  display: grid;
+  /* grid-template-columns: repeat(4, 1fr); */
+  grid-template-rows: repeat(5, 1fr);
+  justify-items: stretch;
+  gap: 20px;
+}
+
+.keyboard-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 20px;
+}
+
+.bottom-keyboard-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-column-gap: 10px;
+}
+
+.bottom-keyboard-row .btn {
+  font-size: 22px;
+}
+
+.btn {
+  cursor: pointer;
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 32px;
+  font-weight: 700;
+  background-color: hsl(30, 25%, 89%);
+  box-shadow: 0px 3px 1px hsl(28, 16%, 65%);
+  color: hsl(221, 14%, 31%);
+}
+
+.btn:active {
+  background-color: hsl(30, 25%, 95%);
+}
+
+.blueBtn {
+  background-color: hsl(225, 21%, 49%);
+  box-shadow: 0px 3px 1px hsl(224, 28%, 35%);
+  color: hsl(0, 0%, 100%);
+}
+
+.blueBtn:active {
+  background-color: hsl(225, 21%, 69%);
+}
+
+.redBtn {
+  background-color: hsl(6, 63%, 50%);
+  box-shadow: 0px 3px 1px hsl(6, 70%, 34%);
+  color: hsl(0, 0%, 100%);
+}
+
+.redBtn:active {
+  background-color: hsl(6, 63%, 60%);
+}
+
+.blueBtn,
+.redBtn {
+  font-size: 20px;
 }
 
 .attribution {
