@@ -13,6 +13,7 @@ import {
 
 const Calculator = () => {
   const { value } = useSelector((state) => state.calculator);
+  const { theme } = useSelector((state) => state.theme);
   const dispatch = useDispatch();
 
   const handleDigitClick = (digit) => {
@@ -47,44 +48,125 @@ const Calculator = () => {
           <span className="theme-span">THEME</span> <ToggleSwitch />
         </div>
       </header>
-      <div className="output-screen">
+      <div className={`output-screen output-${theme}`}>
         {Number(value).toLocaleString('en-US')}
       </div>
-      <div className="keyboard">
+      <div className={`keyboard keyboard-${theme}`}>
         <div className="keyboard-row">
-          <Button handleClick={() => handleDigitClick('7')}>7</Button>
-          <Button handleClick={() => handleDigitClick('8')}>8</Button>
-          <Button handleClick={() => handleDigitClick('9')}>9</Button>
-          <Button className="blueBtn" handleClick={() => handleDeleteClick()}>
+          <Button
+            className={`btn-${theme}`}
+            handleClick={() => handleDigitClick('7')}
+          >
+            7
+          </Button>
+          <Button
+            className={`btn-${theme}`}
+            handleClick={() => handleDigitClick('8')}
+          >
+            8
+          </Button>
+          <Button
+            className={`btn-${theme}`}
+            handleClick={() => handleDigitClick('9')}
+          >
+            9
+          </Button>
+          <Button
+            className={`delBtn-${theme}`}
+            handleClick={() => handleDeleteClick()}
+          >
             DEL
           </Button>
         </div>
         <div className="keyboard-row">
-          <Button handleClick={() => handleDigitClick('4')}>4</Button>
-          <Button handleClick={() => handleDigitClick('5')}>5</Button>
-          <Button handleClick={() => handleDigitClick('6')}>6</Button>
-          <Button handleClick={() => handleOperatorClick('+')}>+</Button>
+          <Button
+            className={`btn-${theme}`}
+            handleClick={() => handleDigitClick('4')}
+          >
+            4
+          </Button>
+          <Button
+            className={`btn-${theme}`}
+            handleClick={() => handleDigitClick('5')}
+          >
+            5
+          </Button>
+          <Button
+            className={`btn-${theme}`}
+            handleClick={() => handleDigitClick('6')}
+          >
+            6
+          </Button>
+          <Button
+            className={`btn-${theme}`}
+            handleClick={() => handleOperatorClick('+')}
+          >
+            +
+          </Button>
         </div>
         <div className="keyboard-row">
-          <Button handleClick={() => handleDigitClick('3')}>3</Button>
-          <Button handleClick={() => handleDigitClick('2')}>2</Button>
-          <Button handleClick={() => handleDigitClick('1')}>1</Button>
-          <Button handleClick={() => handleOperatorClick('-')}>-</Button>
+          <Button
+            className={`btn-${theme}`}
+            handleClick={() => handleDigitClick('3')}
+          >
+            3
+          </Button>
+          <Button
+            className={`btn-${theme}`}
+            handleClick={() => handleDigitClick('2')}
+          >
+            2
+          </Button>
+          <Button
+            className={`btn-${theme}`}
+            handleClick={() => handleDigitClick('1')}
+          >
+            1
+          </Button>
+          <Button
+            className={`btn-${theme}`}
+            handleClick={() => handleOperatorClick('-')}
+          >
+            -
+          </Button>
         </div>
         <div className="keyboard-row">
-          <Button handleClick={() => handleDecimalClick('.')}>.</Button>
-          <Button handleClick={() => handleDigitClick('0')}>0</Button>
-          <Button handleClick={() => handleOperatorClick('/')}>/</Button>
-          <Button handleClick={() => handleOperatorClick('*')}>x</Button>
+          <Button
+            className={`btn-${theme}`}
+            handleClick={() => handleDecimalClick('.')}
+          >
+            .
+          </Button>
+          <Button
+            className={`btn-${theme}`}
+            handleClick={() => handleDigitClick('0')}
+          >
+            0
+          </Button>
+          <Button
+            className={`btn-${theme}`}
+            handleClick={() => handleOperatorClick('/')}
+          >
+            /
+          </Button>
+          <Button
+            className={`btn-${theme}`}
+            handleClick={() => handleOperatorClick('*')}
+          >
+            x
+          </Button>
         </div>
         <div className="bottom-keyboard-row">
           <Button
-            className="blueBtn"
+            className={`delBtn-${theme}`}
             handleClick={() => handleResetClick('reset')}
           >
             RESET
           </Button>
-          <Button className="redBtn" handleClick={() => handleEqualClick()}>
+          <Button
+            className={`equalBtn equalBtn-${theme}`}
+            handleClick={() => handleEqualClick()}
+          >
             =
           </Button>
         </div>
