@@ -43,7 +43,7 @@ const Calculator = () => {
   return (
     <div className="calc-container">
       <header>
-        <div>Calc</div>
+        <div>calc</div>
         <div className="theme-toggle">
           <span className="theme-span">THEME</span> <ToggleSwitch />
         </div>
